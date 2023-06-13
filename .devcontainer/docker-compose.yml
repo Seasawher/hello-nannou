@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  nannou:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    image: nannou-img
+    container_name: nannou-dev
+    volumes:
+      - type: bind
+        source: ..
+        target: /workspace
+    tty: true
+    stdin_open: true
